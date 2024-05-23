@@ -84,11 +84,6 @@ class UsuarioSchema(ma.SQLAlchemyAutoSchema):
     senha = fields.String(required=True)
     is_admin = fields.Boolean(required=True)
 
-class LoginSchema(ma.SQLAlchemyAutoSchema):
-    class Meta:
-        model = UsuarioModel
-        load_instance = True
-        fields = ("id", "nome", "email", "senha")
 
 #service
 def cadastro_usuarios(usuario):
